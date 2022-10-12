@@ -6,7 +6,7 @@ const Quiz = ({ topic }) => {
     // console.log(topic);
     const { id, logo, name, total } = topic;
     return (
-        <div className="flex items-celter justify-evenly ml-28 mt-20 mr-28 mb-8 text-white">
+        <div className="flex items-celter justify-evenly ml-20 mt-20 mr-20 rounded-xl bg-cyan-900 p-10 text-white">
             <img className="image " src={logo}></img>
             <div className="flex flex-col mt-4  lg:mt-6 lg:justify-between ">
                 <h2 className=" text-3xl">{name}</h2>

@@ -28,11 +28,10 @@ function App() {
           element: <Home></Home>
         },
         {
-          path: '/topic',
-          loader: async () => {
-            return fetch('https://openapi.programming-hero.com/api/quiz')
-          },
-          element: <Topic></Topic>
+          path: "/quiz/:id",
+          loader: ({ params }) =>
+            fetch(`https://openapi.programming-hero.com/api/quiz/${params.id}`),
+          element: <Topic></Topic>,
         },
         {
           path: '/statistic',

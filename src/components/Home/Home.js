@@ -6,7 +6,7 @@ const Home = () => {
     const topics = useLoaderData().data;
     // console.log(topics);
     return (
-        <div className='grid grid-cols-2 gap-5 bg-cyan-900 mx-5 rounded-lg '>
+        <div className='grid grid-cols-2 gap-5 mx-5 rounded-lg '>
             {
                 topics.map(topic => <Quiz key={topic.id}
                     topic={topic}
