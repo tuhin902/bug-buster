@@ -33,11 +33,11 @@ const Statistic = () => {
         },
     ];
     return (
-        <div>
+        <div className='w-full'>
             <h1 className="text-3xl text-center ">Lets check  Our Total Quiz</h1>
             <div className="flex justify-center items-center mt-14">
-                <LineChart width={500} height={400} data={data}>
-                    <Line type="monotone" dataKey="uv" stroke="#82ca9d" />
+                <LineChart width={500} height={500} data={data}>
+                    <Line type="monotone" dataKey="uv" stroke="#76eaae" />
                     <XAxis dataKey="name"></XAxis>
                     <YAxis></YAxis>
                     <Tooltip></Tooltip>

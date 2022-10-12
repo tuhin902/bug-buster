@@ -1,0 +1,14 @@
+.image {
+    width: 170px;
+}
+
+.button {
+    background-color: #0d7db9;
+}
+
+.button:hover {
+    background: transparent;
+    transition: 0.4s;
+    color: rgb(10, 2, 11);
+    border: 1px solid #ad91a3;
+}

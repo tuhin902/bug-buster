@@ -8,7 +8,7 @@ const Navbar = () => {
                 <h2 className='text-xl font-bold'>Bug Buster</h2>
                 <div className='w-56'>
                     <ul className='flex justify-between text-lg font-medium'>
-                        <Link to='/'>Topic</Link>
+                        <Link to='/topic'>Topic</Link>
                         <Link to='/statistic'>Statistic</Link>
                         <Link to='/blogs'>Blogs</Link>
                     </ul>
