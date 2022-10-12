@@ -1,9 +1,11 @@
-import React, { useState } from 'react';
-import "react-toastify/dist/ReactToastify.css";
+import React, { useState } from "react";
+import "./Topicquizz.css";
 import Icon from "react-hero-icon";
-import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { Toaster } from "react-hot-toast";
 
-const TopicQuiz = ({ topic }) => {
+const Topicquiz = ({ topic }) => {
     const [selectedAnswer, setselectedAnswer] = useState("");
 
     const answersselecthandler = (answer) => {
@@ -11,24 +13,28 @@ const TopicQuiz = ({ topic }) => {
             setselectedAnswer(answer);
         };
     };
-
+    const correcttoast = () => {
+        toast.success("your answer is correct", { position: "top-center" });
+    };
 
     const onclickedButton = (correctAnswer) => {
         return (e) => {
             e.preventDefault();
+            //   console.log(selectedAnswer);
+            //   console.log(correctAnswer);
             if (selectedAnswer === correctAnswer) {
                 alert("Your answer is correct!");
             } else {
-                alert(" Wrong!");
+                alert(" Wrong!try to best next time");
             }
         };
     };
 
     const difftoast = () => {
-        toast.warning(topic.correctAnswer, { position: "top-center" });
+        toast.success(topic.correctAnswer, { position: "top-center" });
     };
     return (
-        <div className="mt-16 shadow-xl p-8  w-3/4  shadow-cyan-300  topicm">
+        <div className="mt-16 shadow-2xl p-8  w-3/4  shadow-lime-300  topicm">
             <h1>{topic.name}</h1>
             <div className="flex justify-between">
                 <h2 className="text-2xl mb-4"> Quiz :{topic.question}</h2>
@@ -39,7 +45,7 @@ const TopicQuiz = ({ topic }) => {
             </div>
             <div>
                 <form onSubmit={onclickedButton(topic.correctAnswer)}>
-                    <div className="border-0 border-y-2 w-1/2 p-3 border-cyan-400 rounded-lg">
+                    <div className="border-2 w-1/2 p-3 border-lime-400 rounded-lg">
                         <input
                             className="mr-2  "
                             type="radio"
@@ -52,7 +58,7 @@ const TopicQuiz = ({ topic }) => {
                             {topic.options[0]}
                         </label>
                     </div>
-                    <div className="border-0 border-y-2 w-1/2 mt-4 p-3 border-cyan-400 rounded-lg">
+                    <div className="border-2 w-1/2 mt-4 p-3 border-lime-400 rounded-lg">
                         <input
                             className="mr-2  "
                             type="radio"
@@ -65,7 +71,7 @@ const TopicQuiz = ({ topic }) => {
                             {topic.options[0]}
                         </label>
                     </div>
-                    <div className="border-0 border-y-2 w-1/2 mt-4 p-3 border-cyan-400 rounded-lg ">
+                    <div className="border-2 w-1/2 mt-4 p-3 border-lime-400 rounded-lg ">
                         <input
                             className="mr-2  "
                             type="radio"
@@ -78,7 +84,7 @@ const TopicQuiz = ({ topic }) => {
                             {topic.options[0]}
                         </label>
                     </div>
-                    <div className="border-0 border-y-2 w-1/2 mt-4 p-3 border-cyan-400 rounded-lg ">
+                    <div className="border-2 w-1/2 mt-4 p-3 border-lime-400 rounded-lg ">
                         <input
                             className="mr-2"
                             type="radio"
@@ -90,13 +96,27 @@ const TopicQuiz = ({ topic }) => {
                         <label for="html">{topic.options[3]}</label>
                     </div>
                     <br />
-                    <button type="submit" className=" border-cyan-900 rounded-lg p-4 ">
+                    <button type="submit" className=" bg-lime-500 rounded-lg p-4 ">
                         Submit
                     </button>
                 </form>
             </div>
+            {/* <ul className="mt-8 grid grid-cols-1 lg:grid-cols-2">
+        <li className="border-2 border-indigo-600 w-2/3 pt-4 pb-4 pr-14  pl-4 mb-4 rounded-lg ">
+          .{topic.options[0]}
+        </li>
+        <li className="border-2 border-indigo-600 w-2/3  p-6 mb-4 rounded-lg  ">
+          .{topic.options[1]}
+        </li>
+        <li className="border-2 border-indigo-600 w-2/3 p-6 mb-4 rounded-lg  ">
+          .{topic.options[2]}
+        </li>
+        <li className="border-2 border-indigo-600 w-2/3 p-6 mb-4 rounded-lg ">
+          .{topic.options[3]}
+        </li>
+      </ul> */}
         </div>
     );
 };
 
-export default TopicQuiz;
+export default Topicquiz;
