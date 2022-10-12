@@ -2,7 +2,6 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './App.css';
 import Blogs from './components/Blogs/Blogs';
-import Navbar from './components/Navbar/Navbar';
 import Statistic from './components/Statistic/Statistic';
 import Topic from './components/Topic/Topic';
 import Main from './Layout/Main';
@@ -15,11 +14,16 @@ function App() {
       children: [
         {
           path: '/',
-          // loader:,
+          loader: async () => {
+            return fetch('https://openapi.programming-hero.com/api/quiz')
+          },
           element: <Topic></Topic>
         },
         {
           path: '/statistic',
+          loader: async () => {
+            return fetch("https://openapi.programming-hero.com/api/quiz")
+          },
           element: <Statistic></Statistic>
         },
         {
