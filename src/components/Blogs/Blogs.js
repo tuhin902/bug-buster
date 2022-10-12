@@ -28,6 +28,25 @@ const Blogs = () => {
                         experience.
                     </p>
                 </div>
+                <div className="mt-12 blog  w-3/4 border-2 border-lime-400 rounded-lg p-6">
+                    <h2 className="mb-4 text-3xl font-semibold">
+                        {" "}
+                        Question 2:How Does Context Api Work?
+                    </h2>
+                    <p className="letter">
+                        Ans :The React Context API is a way for a React app to effectively
+                        produce global variables that can be passed around. This is the
+                        alternative to "prop drilling" or moving props from grandparent to
+                        child to parent, and so on. Context is also touted as an easier,
+                        lighter approach to state management using Redux.
+                        React.createContext() is all you need. It returns a consumer and a
+                        provider. Provider is a component that as it's names suggests
+                        provides the state to its children. It will hold the "store" and be
+                        the parent of all the components that might need that store.
+                        Consumer as it so happens is a component that consumes and uses the
+                        state.
+                    </p>
+                </div>
 
             </div>
         </div>
